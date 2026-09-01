@@ -63,3 +63,10 @@
 - 保留已有用户主动保存的快捷键，不在加载配置时覆盖。
 - electron-builder 输出改至 `release/`，应用文件白名单收窄为 `dist/main` 与 `dist/renderer`，避免旧产物递归进入新安装包。
 - 验证：干净配置读取 `screenshotShortcut=""`、`historyShortcut=""`；`npm run typecheck` PASS；`npm run dist` PASS；ZIP 完整性检查 PASS；DMG 115MB、ZIP 116MB。
+
+## 2026-09-01 — GitHub 公开发布与 Windows CI 构建
+
+- 创建公开仓库：`https://github.com/Ea12421/floating-clipboard`，提交源码、设计/执行文档、README、MIT 许可证和 Windows Release 工作流；`dist/`、`release/`、`node_modules/` 均未进入 Git 历史。
+- 发布 `v0.1.2`：macOS Apple Silicon DMG/ZIP 已上传；Windows runner 成功执行 typecheck、build、better-sqlite3 原生重编译，并产出 NSIS 安装包与 portable `.exe`。
+- Windows 构建状态：CI 构建成功，未在 Windows 实机手动验证；Release 页面和 README 已明确标注此边界。
+- 公开下载页：`https://github.com/Ea12421/floating-clipboard/releases/tag/v0.1.2`。

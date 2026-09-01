@@ -60,8 +60,8 @@
     "blocking_fix_used": 0,
     "max_blocking_fix": 1
   },
-  "next_action": "补 Windows 启动/重启回读与安装包证据；若当前环境无法运行 Windows，则记录明确环境阻断并保留 macOS 可见成品",
-  "last_evidence": "npm run typecheck PASS；npm run build PASS；npm run dist PASS；干净 SettingsStore 默认快捷键为空 PASS；HISTORY_SMOKE=PASS；HISTORY_IMAGE_SMOKE=PASS；SCREENSHOT_ADAPTER_LOAD=PASS；Computer Use：浮标/菜单/截图拖选复制/图片历史/固定/设置快捷键已注册/主题往返/外部 TextEdit 复制后历史自动刷新 PASS；修复后 GUI 历史显示 CUA live refresh 2026-09-01；新 DMG 115MB/ZIP 116MB 且 ZIP 完整性 PASS，SHA-256 已记录；Electron 最新构建进程已成功保持运行；DEVLOG.md",
+  "next_action": "Windows 实机启动/重启与权限走查仍待具备 Windows 环境时补做；当前公开仓库、macOS 安装包与 Windows CI 下载包已交付",
+  "last_evidence": "npm run typecheck PASS；npm run build PASS；npm run dist PASS；干净 SettingsStore 默认快捷键为空 PASS；HISTORY_SMOKE=PASS；HISTORY_IMAGE_SMOKE=PASS；SCREENSHOT_ADAPTER_LOAD=PASS；Computer Use：浮标/菜单/截图拖选复制/图片历史/固定/设置快捷键已注册/主题往返/外部 TextEdit 复制后历史自动刷新 PASS；修复后 GUI 历史显示 CUA live refresh 2026-09-01；新 DMG 115MB/ZIP 116MB 且 ZIP 完整性 PASS，SHA-256 已记录；GitHub Actions Windows runner typecheck/build/better-sqlite3 原生重编译/NSIS/portable PASS；公开仓库与 v0.1.2 Release 已发布；DEVLOG.md",
   "blocked_reason": "",
   "updated_at": "2026-09-01T19:10:06Z"
 }
