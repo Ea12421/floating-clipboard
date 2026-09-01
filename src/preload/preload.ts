@@ -1,0 +1,28 @@
+import { contextBridge, ipcRenderer } from "electron";
+
+contextBridge.exposeInMainWorld("floatingClipboard", {
+  getSettings: () => ipcRenderer.invoke("settings:get"),
+  updateSettings: (patch: Record<string, unknown>) => ipcRenderer.invoke("settings:update", patch),
+  hideBubble: () => ipcRenderer.invoke("bubble:hide"),
+  showBubble: () => ipcRenderer.invoke("bubble:show"),
+  toggleBubbleLock: () => ipcRenderer.invoke("bubble:toggle-lock"),
+  startBubbleDrag: () => ipcRenderer.send("bubble:drag-start"),
+  endBubbleDrag: () => ipcRenderer.send("bubble:drag-end"),
+  openMenu: () => ipcRenderer.send("window:open-menu"),
+  openSettings: () => ipcRenderer.send("window:open-settings"),
+  openHistory: () => ipcRenderer.send("window:open-history"),
+  closeMenu: () => ipcRenderer.send("window:close-menu"),
+  closeCurrentWindow: () => ipcRenderer.send("window:close-current"),
+  listHistory: (options: { kind?: "text" | "image"; pinnedOnly?: boolean; search?: string } = {}) => ipcRenderer.invoke("history:list", options),
+  getHistoryImagePreview: (id: string) => ipcRenderer.invoke("history:preview", id),
+  copyHistory: (id: string) => ipcRenderer.invoke("history:copy", id),
+  toggleHistoryPin: (id: string) => ipcRenderer.invoke("history:toggle-pin", id),
+  deleteHistory: (id: string) => ipcRenderer.invoke("history:delete", id),
+  clearHistory: () => ipcRenderer.invoke("history:clear"),
+  setClipboardCaptureEnabled: (enabled: boolean) => ipcRenderer.invoke("clipboard:set-enabled", enabled),
+  startScreenshot: () => ipcRenderer.invoke("screenshot:start"),
+  getScreenshotFrame: () => ipcRenderer.invoke("screenshot:frame"),
+  completeScreenshot: (selection: { x: number; y: number; width: number; height: number }) => ipcRenderer.invoke("screenshot:complete", selection),
+  cancelScreenshot: () => ipcRenderer.invoke("screenshot:cancel"),
+  getShortcutStatus: () => ipcRenderer.invoke("shortcuts:status"),
+});

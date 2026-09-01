@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.1",
+  "run_id": "floating-clipboard-20260901",
+  "owner_task_id": "01a05d92-3271-7530-8b91-f9195db3372b",
+  "lane": "long-task",
+  "status": "running",
+  "objective": "将单屏本地优先的截图与剪贴板浮块工具按冻结文档实现为可安装、可验证的 macOS/Windows 成品。",
+  "phase": "slice-5",
+  "done_definition": [
+    "产品范围、交互、技术架构、实施切片与最终验收标准已落盘",
+    "项目窗口已建立并能从本目录恢复上下文",
+    "后续实现完成最终验收矩阵并留下两平台真实运行证据"
+  ],
+  "anti_goals": [
+    "不把中间施工切片包装成对用户交付的半成品版本",
+    "不在本轮加入云同步、账号、多显示器联动或无关功能",
+    "不把模型自评、构建成功或模拟数据当成真实成品验收"
+  ],
+  "scope": {
+    "allowed": [
+      "/Users/m4air/Projects/截图剪贴板浮块 内的项目文档与后续实现",
+      "单活动显示器截图、图片钉住、文字/图片剪贴板历史、快捷键、设置、可插拔翻译",
+      "macOS 与 Windows 的本地安装和真实运行验证"
+    ],
+    "forbidden": [
+      "跨电脑同步、云端账号、云盘冲突解决、远程控制",
+      "多显示器联动、跨屏选区、录音、笔记、链接收藏、凭据管理、待办",
+      "未经确认的外部发布、生产部署、密钥写入仓库或覆盖用户文件"
+    ]
+  },
+  "recent_corrections": [
+    {
+      "at": "2026-09-01T15:22:24Z",
+      "source_ref": "user-turn",
+      "rejected": "持续顶部面板并把多显示器/同步作为当前范围",
+      "required": "改为单屏小悬浮块，本地优先，先不做同步与多显示器功能"
+    },
+    {
+      "at": "2026-09-01T18:10:00Z",
+      "source_ref": "user-turn",
+      "rejected": "必须切换到 Windows 才能继续推进",
+      "required": "macOS 继续实现跨平台核心；Windows 仅作为后续真实运行证据补做"
+    }
+  ],
+  "progress": {
+    "completed": 0,
+    "total": 6,
+    "unit": "实现闭环切片",
+    "last_delta": "已接入单屏截图选区、DPI 裁剪、可选复合全局快捷键注册/冲突状态与未配置翻译提示；默认快捷键改为空值以避免抢占；macOS 安装包输出改为 release 白名单并完成哈希核验；Computer Use 完成 macOS 截图、历史、固定、设置、主题与真实剪贴板监听走查，并修复历史窗口自动刷新"
+  },
+  "retry": {
+    "error_fingerprint": "electron-sigabrt-nsapplication-init-macos-26.3.1",
+    "used": 1,
+    "max": 1,
+    "last_evidence": "npm start 与 ELECTRON_ENABLE_LOGGING=1 npm start -- --no-sandbox 均在 Electron 36.9.5 NSApplication 初始化阶段 SIGABRT；诊断报告写入 ~/Library/Logs/DiagnosticReports"
+  },
+  "review": {
+    "used": 0,
+    "max": 1,
+    "blocking_fix_used": 0,
+    "max_blocking_fix": 1
+  },
+  "next_action": "补 Windows 启动/重启回读与安装包证据；若当前环境无法运行 Windows，则记录明确环境阻断并保留 macOS 可见成品",
+  "last_evidence": "npm run typecheck PASS；npm run build PASS；npm run dist PASS；干净 SettingsStore 默认快捷键为空 PASS；HISTORY_SMOKE=PASS；HISTORY_IMAGE_SMOKE=PASS；SCREENSHOT_ADAPTER_LOAD=PASS；Computer Use：浮标/菜单/截图拖选复制/图片历史/固定/设置快捷键已注册/主题往返/外部 TextEdit 复制后历史自动刷新 PASS；修复后 GUI 历史显示 CUA live refresh 2026-09-01；新 DMG 115MB/ZIP 116MB 且 ZIP 完整性 PASS，SHA-256 已记录；Electron 最新构建进程已成功保持运行；DEVLOG.md",
+  "blocked_reason": "",
+  "updated_at": "2026-09-01T19:10:06Z"
+}
