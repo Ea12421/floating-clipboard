@@ -28,6 +28,7 @@ jobs:
       - name: Verify and build Windows packages
         run: |
           npm run typecheck
+          npm run build
           npx electron-builder --win
 
       - name: Upload Windows build artifacts
