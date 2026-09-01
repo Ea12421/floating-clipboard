@@ -11,7 +11,7 @@
 
 ## 下载
 
-请到 GitHub Releases 下载对应平台附件：
+请到 [GitHub Releases](https://github.com/Ea12421/floating-clipboard/releases) 下载对应平台附件：
 
 - macOS Apple Silicon：`.dmg` 或 `.zip`
 - Windows：`.exe` 安装包或 portable 版本（未在 Windows 实机验证）
